@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6 mx-auto"></div>
+      <h1>Restaurants</h1>
+      <div>
+        <% @restaurants.each do |restaurant| %>
+          <h2><%= link_to "#{restaurant.name}", restaurant_path(restaurant), class: "text-decoration-none" %></h2>
+            <ul>
+              <li><%= restaurant.category %></li>
+              <li><%= restaurant.address %></li>
+              <li><%= restaurant.phone_number %></li>
+            </ul>
+        <% end %>
+      </div>
+      <%= link_to 'Add New Restaurant', new_restaurant_path %>
+  </div>
+</div>
+
+
